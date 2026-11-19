@@ -69,4 +69,7 @@ A Java-based web application that allows users to register an account with form 
    http://localhost:8080
 
 
+## Author
+Shan Jiang
+
 
