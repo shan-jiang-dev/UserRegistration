@@ -5,6 +5,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name="users")
@@ -13,8 +18,19 @@ public class SimpleUser {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
+	@NotBlank(message = "Username is required!")
+	@Size(min = 2, max = 20, message = "Username must be between 2 to 20 characters!")
 	private String userName;
+	
+	@NotNull(message = "Password is required!")
+	@Pattern(regexp = ".*[A-Z].*", message = "Password should contain at least 1 uppercase character")
+	@Pattern(regexp = ".*[a-z].*", message = "Password should contain at least 1 lowercase character")
+	@Pattern(regexp = ".*\\d.*", message = "Password should contain at least 1 number")
 	private String password;
+	
+	@NotBlank(message = "Email is required!")
+	@Email(message = "Please enter a valid email address!")
 	private String email;
 	
 	public Long getId() {

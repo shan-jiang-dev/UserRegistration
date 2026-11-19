@@ -5,11 +5,16 @@
 </head>
 <body>
 	
-	<form th:action="@{/register}" method="post">
+	<form th:action="@{/register}" th:object="${simpleUser}" method="post">
 	
-		<input type="text" name="userName" placeholder="Enter your Username">
-		<input type="text" name="email" placeholder="Enter your Email">
-		<input type="text" name="password" placeholder="Enter your Passwprd">
+		<input type="text" th:field="*{userName}" placeholder="Enter your Username">
+		<p style="color:red;" th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></p>
+		
+		<input type="text" th:field="*{email}" placeholder="Enter your Email">
+		<p style="color:red;" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+		
+		<input type="text" th:field="*{password}" placeholder="Enter your Passwprd">
+		<p style="color:red;" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
 		
 		<button type="submit">Submit</button>
 	</form>
