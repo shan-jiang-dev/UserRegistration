@@ -1,23 +1,90 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>User Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | User Registration</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-	
-	<form th:action="@{/register}" th:object="${simpleUser}" method="post">
-	
-		<input type="text" th:field="*{userName}" placeholder="Enter your Username">
-		<p style="color:red;" th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></p>
-		
-		<input type="text" th:field="*{email}" placeholder="Enter your Email">
-		<p style="color:red;" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
-		
-		<input type="text" th:field="*{password}" placeholder="Enter your Passwprd">
-		<p style="color:red;" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
-		
-		<button type="submit">Submit</button>
-	</form>
+<div class="container">
+
+    <div class="welcome-panel">
+        <div class="brand">USER PORTAL</div>
+
+        <div class="welcome-content">
+            <h1>Create your account.</h1>
+            <p>
+                Get started by creating your account.
+                Fill in your details below to join us.
+            </p>
+        </div>
+
+        <div class="welcome-footer">
+            © 2026 User Portal. All rights reserved.
+        </div>
+    </div>
+
+    <div class="form-panel">
+
+        <div class="form-header">
+            <h2>Create Account</h2>
+            <p>Enter your information to get started.</p>
+        </div>
+
+        <form th:action="@{/register}"
+              th:object="${simpleUser}"
+              method="post">
+
+            <div class="form-group">
+                <label for="userName">Username</label>
+                <input type="text"
+                       th:field="*{userName}"
+                       placeholder="Enter your username"
+                       autocomplete="username">
+
+                <p class="error"
+                   th:if="${#fields.hasErrors('userName')}"
+                   th:errors="*{userName}"></p>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email"
+                       th:field="*{email}"
+                       placeholder="name@example.com"
+                       autocomplete="email">
+
+                <p class="error"
+                   th:if="${#fields.hasErrors('email')}"
+                   th:errors="*{email}"></p>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password"
+                       th:field="*{password}"
+                       placeholder="Create a password"
+                       autocomplete="new-password">
+
+                <p class="error"
+                   th:if="${#fields.hasErrors('password')}"
+                   th:errors="*{password}"></p>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Create Account
+            </button>
+
+        </form>
+
+        <p class="form-note">
+            Your information is securely submitted.
+        </p>
+
+    </div>
+
+</div>
 
 </body>
 </html>

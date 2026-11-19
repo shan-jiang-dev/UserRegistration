@@ -2,6 +2,11 @@
 
 A Java-based web application that allows users to register an account with form validation and MySQL database integration.
 
+## Homepage Screenshot
+
+![User Registration App Homepage](screenshots/create-an-account.png)
+![User Registration App Homepage](screenshots/create-an-account-errors.png)
+
 ## Technologies Used
 
 - Java
