@@ -27,10 +27,10 @@ A Java-based web application that allows users to register an account with form 
 
 ## Key Concepts
 
-- **Spring MVC:** Handles HTTP requests and manages application flow.
-- **Thymeleaf:** Renders dynamic HTML pages and binds form fields to Java objects.
-- **Spring Data JPA:** Simplifies database operations through `JpaRepository`.
-- **Bean Validation:** Validates user input using annotations such as `@NotBlank`, `@Size`, `@Email`, and `@Pattern`.
+- Spring MVC: Handles HTTP requests and manages application flow.
+- Thymeleaf: Renders dynamic HTML pages and binds form fields to Java objects.
+- Spring Data JPA: Simplifies database operations through `CrudRepository`.
+- Bean Validation: Validates user input using annotations such as `@NotBlank`, `@Size`, `@Email`, and `@Pattern`.
 
 ## Getting Started
 
