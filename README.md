@@ -39,22 +39,34 @@ A Java-based web application that allows users to register an account with form 
 
 ## Getting Started
 
-### Run the Application
+### Prerequisites
 
-```bash
-mvn spring-boot:run
-```
+- Java JDK 21
+- Maven
+- MySQL
 
-Open your browser:
+### Run Locally
 
-`http://localhost:8080/`
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/shan-jiang-dev/UserRegistration.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd UserRegistration
+   ```
+3. Create a MySQL database:
+   ```sql
+   CREATE DATABASE userregistration;
+   ```
+4. Configure your MySQL credentials in `src/main/resources/application.yml`.
+5. Run the application:
+
+   ```bash
+   mvn spring-boot:run
+   ```
+6. Open your browser at:
+   http://localhost:8080
 
 
 
-Spring Validation Implementation Steps
-
-1. Add validation Annotation to the Entity field
-2. Implement @Valid and BindingResult(Interface) to the method which is handling the request (in UserController)
-@Valid is used to validate if the form fields are valid, BindingResult is used to store all the errors, think of BindingResult as a box
-3. Bind the Entity Object and field
-4. Add Error HTML tag with thymleaf
