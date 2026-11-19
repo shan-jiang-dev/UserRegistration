@@ -20,7 +20,7 @@ public class UserController {
 	
 	@RequestMapping("/")
 	public String showRegistrationForm(Model model) {
-		model.addAttribute("simpleUser" , new SimpleUser());
+		model.addAttribute("simpleUser", new SimpleUser());
 		return "userregistration";
 	}
 	
